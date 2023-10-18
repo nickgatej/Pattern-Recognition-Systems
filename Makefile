@@ -13,3 +13,8 @@ lab1:
 lab2:
 	@echo "RANSAC Line Fitting"
 	$(CC) -std=$(STD) $(ROOT_DIR)/Lab2/Lab2.cpp -o $(PROJECT) $(LIBS)
+
+.PHONY: lab3
+lab3:
+	@echo "Hough Transform Line Fitting"
+	$(CC) -std=$(STD) $(ROOT_DIR)/Lab3/Lab3.cpp -o $(PROJECT) $(LIBS)
