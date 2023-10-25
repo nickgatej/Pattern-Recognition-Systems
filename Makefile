@@ -18,3 +18,8 @@ lab2:
 lab3:
 	@echo "Hough Transform Line Fitting"
 	$(CC) -std=$(STD) $(ROOT_DIR)/Lab3/Lab3.cpp -o $(PROJECT) $(LIBS)
+
+.PHONY: lab4
+lab4:
+	@echo "Distance Transform & Pattern Matching"
+	$(CC) -std=$(STD) $(ROOT_DIR)/Lab4/Lab4.cpp -o $(PROJECT) $(LIBS)
