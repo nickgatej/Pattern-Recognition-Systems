@@ -23,3 +23,8 @@ lab3:
 lab4:
 	@echo "Distance Transform & Pattern Matching"
 	$(CC) -std=$(STD) $(ROOT_DIR)/Lab4/Lab4.cpp -o $(PROJECT) $(LIBS)
+
+.PHONY: lab5
+lab5:
+	@echo "Statistical Data Analysis"
+	$(CC) -std=$(STD) $(ROOT_DIR)/Lab5/Lab5.cpp -o $(PROJECT) $(LIBS)	
