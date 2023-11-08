@@ -27,4 +27,9 @@ lab4:
 .PHONY: lab5
 lab5:
 	@echo "Statistical Data Analysis"
-	$(CC) -std=$(STD) $(ROOT_DIR)/Lab5/Lab5.cpp -o $(PROJECT) $(LIBS)	
+	$(CC) -std=$(STD) $(ROOT_DIR)/Lab5/Lab5.cpp -o $(PROJECT) $(LIBS)
+
+.PHONY: lab6
+lab6:
+	@echo "Principal Component Analysis"
+	$(CC) -std=$(STD) $(ROOT_DIR)/Lab6/Lab6.cpp -o $(PROJECT) $(LIBS)	
