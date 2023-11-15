@@ -33,3 +33,8 @@ lab5:
 lab6:
 	@echo "Principal Component Analysis"
 	$(CC) -std=$(STD) $(ROOT_DIR)/Lab6/Lab6.cpp -o $(PROJECT) $(LIBS)	
+
+.PHONY: lab7
+lab7:
+	@echo "K-means Clustering"
+	$(CC) -std=$(STD) $(ROOT_DIR)/Lab7/Lab7.cpp -o $(PROJECT) $(LIBS)	
