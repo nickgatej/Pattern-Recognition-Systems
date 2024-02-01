@@ -1,3 +1,6 @@
-output
-.vscode
+**/.DS_Store
+**/.vscode
 notes.txt
+builddir
+correlation.txt
+covariance.txt

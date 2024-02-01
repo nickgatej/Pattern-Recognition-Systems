@@ -1,40 +1,56 @@
-CC = g++
-PROJECT = output
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-STD = c++17
-LIBS = `pkg-config --cflags --libs opencv4`
+include .build.env.default
+
+.PHONY: setup
+setup:
+	@echo "Setting up the project"
+	mkdir -p $(BUILD_FOLDER) && meson setup $(BUILD_FOLDER)
+
+.PHONY: build
+build:
+	@echo "Building the project"
+	meson compile -C $(BUILD_FOLDER)
 
 .PHONY: lab1
 lab1:
 	@echo "Least Mean Squares Line Fitting"
-	$(CC) -std=$(STD) $(ROOT_DIR)/Lab1/Lab1.cpp -o $(PROJECT) $(LIBS)
+	./$(BUILD_FOLDER)/Lab1
 
 .PHONY: lab2
 lab2:
 	@echo "RANSAC Line Fitting"
-	$(CC) -std=$(STD) $(ROOT_DIR)/Lab2/Lab2.cpp -o $(PROJECT) $(LIBS)
+	./$(BUILD_FOLDER)/Lab2
 
 .PHONY: lab3
 lab3:
 	@echo "Hough Transform Line Fitting"
-	$(CC) -std=$(STD) $(ROOT_DIR)/Lab3/Lab3.cpp -o $(PROJECT) $(LIBS)
+	./$(BUILD_FOLDER)/Lab3
 
 .PHONY: lab4
 lab4:
 	@echo "Distance Transform & Pattern Matching"
-	$(CC) -std=$(STD) $(ROOT_DIR)/Lab4/Lab4.cpp -o $(PROJECT) $(LIBS)
+	./$(BUILD_FOLDER)/Lab4
 
 .PHONY: lab5
 lab5:
 	@echo "Statistical Data Analysis"
-	$(CC) -std=$(STD) $(ROOT_DIR)/Lab5/Lab5.cpp -o $(PROJECT) $(LIBS)
+	./$(BUILD_FOLDER)/Lab5
 
 .PHONY: lab6
 lab6:
 	@echo "Principal Component Analysis"
-	$(CC) -std=$(STD) $(ROOT_DIR)/Lab6/Lab6.cpp -o $(PROJECT) $(LIBS)	
+	./$(BUILD_FOLDER)/Lab6
 
 .PHONY: lab7
 lab7:
-	@echo "K-means Clustering"
-	$(CC) -std=$(STD) $(ROOT_DIR)/Lab7/Lab7.cpp -o $(PROJECT) $(LIBS)	
+	@echo "K-Means Clustering"
+	./$(BUILD_FOLDER)/Lab7
+
+.PHONY: lab8
+lab8:
+	@echo "K Nearest Neighbors"
+	./$(BUILD_FOLDER)/Lab8
+
+.PHONY: clean
+clean:
+	@echo "Removing build folder"
+	rm -rf $(BUILD_FOLDER)
