@@ -106,7 +106,7 @@ void classifyImages(Mat_<double> X, Mat_<int> y, string folderPath) {
             vector<pair<double, int>> distances = computeEuclideanDistances(featureVector, X, y);
             sort(distances.begin(), distances.end());
 
-            // take K Nearest Neigbors and find the Neighbour with the most number of "votes"
+            // Take K Nearest Neigbors and find the Neighbour with the most number of "votes"
             vector<int> votes(numOfClasses);
             for (int i = 0; i < K; ++i) {
                 int classIdx = distances[i].second;
@@ -121,7 +121,7 @@ void classifyImages(Mat_<double> X, Mat_<int> y, string folderPath) {
                 }
             }
 
-            // classIdx is the actualClass
+            // classIdx is the actual class
             classIdx == predictedClassIdx ? ++correctAnswersCount : ++wrongAnswersCount;
             ConfusionMatrix(classIdx, predictedClassIdx)++;
         }
