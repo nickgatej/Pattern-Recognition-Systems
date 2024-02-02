@@ -16,7 +16,8 @@ labs = [
     'Lab6/Lab6.cpp',
     'Lab7/Lab7.cpp',
     'Lab8/Lab8.cpp',
-    'Lab9/Lab9.cpp'
+    'Lab9/Lab9.cpp',
+    'LabA/LabA.cpp',
 ]
 
 foreach lab_src: labs

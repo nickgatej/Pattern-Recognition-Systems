@@ -55,6 +55,11 @@ lab9:
 	@echo "Naive Bayes Classifier"
 	./$(BUILD_FOLDER)/Lab9
 
+.PHONY: lab10
+lab10:
+	@echo "Perceptron Classifier"
+	./$(BUILD_FOLDER)/LabA
+
 .PHONY: clean
 clean:
 	@echo "Removing build folder"
