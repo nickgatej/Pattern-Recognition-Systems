@@ -50,6 +50,11 @@ lab8:
 	@echo "K Nearest Neighbors"
 	./$(BUILD_FOLDER)/Lab8
 
+.PHONY: lab9
+lab9:
+	@echo "Naive Bayes Classifier"
+	./$(BUILD_FOLDER)/Lab9
+
 .PHONY: clean
 clean:
 	@echo "Removing build folder"

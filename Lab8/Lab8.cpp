@@ -45,7 +45,6 @@ pair<Mat_<double>, Mat_<int>> train(string folderPath) {
     for (int classIdx = 0; classIdx < numOfClasses; ++classIdx) {
         int pictureIdx = 0;
         while (true) {
-            char fname[MAX_PATH];
             sprintf(fname, "%s/train/%s/%06d.jpeg", folderPath.c_str(), classes[classIdx].c_str(), pictureIdx++);
 
             Mat_<Vec3b> img = imread(fname, IMREAD_COLOR);
@@ -89,7 +88,6 @@ void classifyImages(Mat_<double> X, Mat_<int> y, string folderPath) {
         int pictureIdx = 0;
 
         while (true) {
-            char fname[MAX_PATH];
             sprintf(fname, "%s/test/%s/%06d.jpeg", folderPath.c_str(), classes[classIdx].c_str(), pictureIdx++);
 
             Mat_<Vec3b> img = imread(fname, IMREAD_COLOR);
